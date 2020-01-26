@@ -8,23 +8,31 @@ RANDOM_URL = TOP_URL + '/random'
 RETRY = 5
 WEBHOOK_URL = os.environ['WEBHOOK_URL']
 
-for i in range(RETRY):
-    html = requests.get(RANDOM_URL).text
-    soup = BeautifulSoup(html, 'html.parser')
+def lambda_handler(event, context):
+    post_slack()
+    return {
+        'statusCode': 200,
+        'body': json.dumps('DONE!')
+    }
 
-    article = soup.article.select('article a.article-link')[0]
-    article_string = article.string.strip()
-    article_link = TOP_URL + article.get('href')
+def post_slack():
+    for i in range(RETRY):
+        html = requests.get(RANDOM_URL).text
+        soup = BeautifulSoup(html, 'html.parser')
 
-    if article_string: break
+        article = soup.article.select('article a.article-link')[0]
+        article_string = article.string.strip()
+        article_link = TOP_URL + article.get('href')
 
-print('article_string = \"{}\"'.format(article_string))
-print('article_link = \"{}\"'.format(article_link))
+        if article_string: break
 
-message_json = {"text": "=== FML ===\n{}\n{}".format(article_string, article_link)}
-res = requests.post(
-    WEBHOOK_URL,
-    json.dumps(message_json),
-    headers={'Content-Type': 'application/json'})
+    print('article_string = \"{}\"'.format(article_string))
+    print('article_link = \"{}\"'.format(article_link))
 
-print(res)
+    message_json = {"text": "=== FML ===\n{}\n{}".format(article_string, article_link)}
+    res = requests.post(
+        WEBHOOK_URL,
+        json.dumps(message_json),
+        headers={'Content-Type': 'application/json'})
+
+    print(res)
