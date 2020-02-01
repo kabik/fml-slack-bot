@@ -1,0 +1,19 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      python: 3.7
+    commands:
+      - pip install pipenv
+  pre_build:
+    commands:
+      - echo pre_build phase at `date`
+      - pipenv install
+  build:
+    commands:
+      - echo build phase at `date`
+      - zip -r resources.zip .
+  post_build:
+    commands:
+      - aws s3 cp s3:flm-bot-test/SourceArti
