@@ -14,7 +14,7 @@ def lambda_handler(event, context):
     post_slack()
     return {
         'statusCode': 200,
-        'body': json.dumps('DONE!')
+        'body': json.dumps('DONE')
     }
 
 def post_slack():
