@@ -11,11 +11,11 @@ phases:
     commands:
       - pip install --upgrade pip
       - pip install pipenv
-      - export VENV_HOME_DIR=$(pipenv --venv)
-      - . $VENV_HOME_DIR/bin/activate
   pre_build:
     commands:
       - pipenv install
+      - export VENV_HOME_DIR=$(pipenv --venv)
+      - . $VENV_HOME_DIR/bin/activate
   build:
     commands:
       - zip -r resources.zip .
