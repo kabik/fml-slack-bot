@@ -7,9 +7,11 @@ artifacts:
 phases:
   install:
     runtime-versions:
-      python: 3.7
+      python: 3.8
     commands:
       - pip install pipenv
+      - export VENV_HOME_DIR=$(pipenv --venv)
+      - . $VENV_HOME_DIR/bin/activate
   pre_build:
     commands:
       - pipenv install
