@@ -21,4 +21,4 @@ phases:
       - zip -r resources.zip .
   post_build:
     commands:
-      - aws s3 cp s3:flm-bot-test/SourceArti
+      - aws s3 cp resources.zip s3:flm-bot-test/SourceArti
