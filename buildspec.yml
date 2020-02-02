@@ -9,6 +9,7 @@ phases:
     runtime-versions:
       python: 3.8
     commands:
+      - pip install --upgrade pip
       - pip install pipenv
       - export VENV_HOME_DIR=$(pipenv --venv)
       - . $VENV_HOME_DIR/bin/activate
