@@ -7,7 +7,7 @@ artifacts:
 phases:
   install:
     runtime-versions:
-      python: 3.7
+      python: 3.8
     commands:
       - echo install phase at `date`
       - pip install pipenv
