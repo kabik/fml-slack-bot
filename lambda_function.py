@@ -41,5 +41,3 @@ def post_slack():
         headers={'Content-Type': 'application/json'})
 
     print(res)
-
-translate.translate('は')
