@@ -7,7 +7,7 @@ artifacts:
 phases:
   install:
     runtime-versions:
-      python: 3.8
+      python: 3.7
     commands:
       - pip install pipenv
   pre_build:
