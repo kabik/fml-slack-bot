@@ -5,3 +5,5 @@ https://www.fmylife.com/ の投稿をランダムにslackのチャンネルに�
 機械翻訳付き
 
 ## How to deploy
+
+このリポジトリの `develop`ブランチを更新するとCodepipelineが走る
