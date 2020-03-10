@@ -14,3 +14,4 @@ https://www.fmylife.com/ の投稿をランダムにslackのチャンネルに�
 - 実行
   - AWS Lambda
   - Amazon Translate
+- CI/CD
