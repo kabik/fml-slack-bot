@@ -7,7 +7,7 @@ import translate
 
 TOP_URL = 'https://www.fmylife.com'
 RANDOM_URL = TOP_URL + '/random'
-RETRY = 5
+RETRY = 6
 WEBHOOK_URL = os.environ['WEBHOOK_URL']
 
 def lambda_handler(event, context):
