@@ -13,6 +13,7 @@ https://www.fmylife.com/ の投稿をランダムにslackのチャンネルに�
 
 - 実行
   - AWS Lambda
+    - Python3.7
   - Amazon Translate
 - CI/CD
   - GitHub
