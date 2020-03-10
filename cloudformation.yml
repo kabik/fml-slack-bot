@@ -6,7 +6,7 @@ Resources:
             S3Bucket: fml-bot-test
             S3Key: built.zip
         Description: FML bot test
-        FunctionName: fml-bot-test4
+        FunctionName: fml-bot-test-cicd
         Handler: lambda_function.lambda_handler
         MemorySize: 128
         ReservedConcurrentExecutions: 10
