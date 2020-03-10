@@ -10,7 +10,7 @@ Resources:
         Handler: lambda_function.lambda_handler
         MemorySize: 128
         ReservedConcurrentExecutions: 10
-        Role: !Sub "arn:aws:iam::${AWS::AccountId}:role/service-role/fms-bot-role-r0r7b6hw"
+        Role: !Sub "arn:aws:iam::${AWS::AccountId}:role/fml-bot-translate"
         Runtime: python3.7
         Timeout: 60
 
