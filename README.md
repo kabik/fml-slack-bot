@@ -15,3 +15,7 @@ https://www.fmylife.com/ の投稿をランダムにslackのチャンネルに�
   - AWS Lambda
   - Amazon Translate
 - CI/CD
+  - GitHub
+  - CodePipeline
+  - CodeBuild
+  - CloudFormation
