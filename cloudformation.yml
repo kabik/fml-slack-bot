@@ -3,7 +3,7 @@ Resources:
     Type: AWS::Lambda::Function
     Properties:
         Code:
-            S3Bucket: fml-bot-test
+            S3Bucket: codepipeline-ap-northeast-1-870547711726
             S3Key: built.zip
         Description: FML bot test
         FunctionName: fml-bot-test-cicd
