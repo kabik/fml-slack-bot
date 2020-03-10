@@ -18,7 +18,7 @@ phases:
       - . $VENV_HOME_DIR/bin/activate
   build:
     commands:
-      - zip -r result.zip .
+      - zip -r result.zip ./* ${VENV_HOME_DIR}/lib/python3.7/site-packages/*
   post_build:
     commands:
       - aws s3 cp result.zip s3://codepipeline-ap-northeast-1-870547711726/fml-bot-test2/built.zip --sse aws:kms
