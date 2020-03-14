@@ -21,7 +21,7 @@ Resources:
     Type: AWS::Events::Rule
     Properties:
       Description: 'Scheduled Event'
-      ScheduleExpression: 'cron(*/5, 3/6, *, *, ?, *)'
+      ScheduleExpression: 'cron(*/5, *, *, *, ?, *)'
       State: ENABLED
       Targets:
         - Arn: !GetAtt FmlLambdaFunction.Arn
