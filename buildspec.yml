@@ -9,6 +9,7 @@ phases:
     runtime-versions:
       python: 3.7
     commands:
+      - echo $CODEBUILD_SOURCE_VERSION
       - pip install --upgrade pip
       - pip install pipenv
   pre_build:
