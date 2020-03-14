@@ -19,7 +19,7 @@ def lambda_handler(event, context):
 
 def get_webhook_url():
     ssm = boto3.client('ssm')
-    return ssm.get_parameter('FML_BOT_TEST_WEBHOOK_URL', WithDecryption=True)
+    return ssm.get_parameter(Name='FML_BOT_TEST_WEBHOOK_URL', WithDecryption=True)
 
 def post_slack():
     for i in range(RETRY):
