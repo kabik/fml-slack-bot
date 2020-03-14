@@ -1,6 +1,7 @@
 import requests
 import json
 import os
+import boto3
 from bs4 import BeautifulSoup
 
 import translate
