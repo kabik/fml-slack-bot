@@ -8,7 +8,6 @@ import translate
 TOP_URL = 'https://www.fmylife.com'
 RANDOM_URL = TOP_URL + '/random'
 RETRY = 6
-WEBHOOK_URL = os.environ['WEBHOOK_URL']
 
 def lambda_handler(event, context):
     post_slack()
@@ -16,6 +15,10 @@ def lambda_handler(event, context):
         'statusCode': 200,
         'body': json.dumps('DONE')
     }
+
+def get_webhook_url():
+    ssm = boto3.client('ssm')
+    return ssm.get_parameter('FML_BOT_TEST_WEBHOOK_URL', WithDecryption=True)
 
 def post_slack():
     for i in range(RETRY):
@@ -35,8 +38,10 @@ def post_slack():
     print('article_link = \"{}\"'.format(article_link))
 
     message_json = {"text": "{}\n----\n{}\n{}".format(article_ja, article_en, article_link)}
+
+    webhook_url = get_webhook_url()
     res = requests.post(
-        WEBHOOK_URL,
+        webhook_url,
         json.dumps(message_json),
         headers={'Content-Type': 'application/json'})
 
