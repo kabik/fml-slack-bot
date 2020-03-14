@@ -4,7 +4,7 @@ Resources:
     Properties:
       Environment:
         Variables:
-          WEBHOOK_URL: https://hogea
+          WEBHOOK_URL: https://hogeab
       Code:
         S3Bucket: codepipeline-ap-northeast-1-870547711726
         S3Key: fml-bot-test2/built.zip
