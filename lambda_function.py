@@ -41,6 +41,7 @@ def post_slack():
     message_json = {"text": "{}\n----\n{}\n{}".format(article_ja, article_en, article_link)}
 
     webhook_url = get_webhook_url()
+    print('url=', webhook_url)
     res = requests.post(
         webhook_url,
         json.dumps(message_json),
