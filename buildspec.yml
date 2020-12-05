@@ -23,4 +23,4 @@ phases:
       - zip -r result.zip .
   post_build:
     commands:
-      - aws s3 cp result.zip s3://codepipeline-ap-northeast-1-870547711726/fml-bot-test2/built.zip --sse aws:kms
+      - aws s3 cp result.zip s3://fml-bot-artifact/fml-bot/built.zip --sse aws:kms
