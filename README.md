@@ -4,6 +4,8 @@ https://www.fmylife.com/ の投稿をランダムにslackのチャンネルに�
 
 機械翻訳付き
 
+## Architecture
+
 ## How to deploy
 
 このリポジトリの `master` ブランチを更新するとCodepipelineが走る
