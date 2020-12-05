@@ -1,0 +1,26 @@
+version: 0.2
+
+artifacts:
+  files:
+    - '**/*'
+
+phases:
+  install:
+    runtime-versions:
+      python: 3.7
+    commands:
+      - echo $CODEBUILD_SOURCE_VERSION
+      - pip install --upgrade pip
+      - pip install pipenv
+  pre_build:
+    commands:
+      - pipenv install
+      - export VENV_HOME_DIR=$(pipenv --venv)
+      - . $VENV_HOME_DIR/bin/activate
+  build:
+    commands:
+      - cp -r $VENV_HOME_DIR/lib/python3.7/site-packages/* .
+      - zip -r result.zip .
+  post_build:
+    commands:
+      - aws s3 cp result.zip s3://codepipeline-ap-northeast-1-870547711726/fml-bot-test2/built.zip --sse aws:kms
