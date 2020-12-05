@@ -6,7 +6,7 @@ https://www.fmylife.com/ の投稿をランダムにslackのチャンネルに�
 
 ## How to deploy
 
-このリポジトリの `develop`ブランチを更新するとCodepipelineが走る
+このリポジトリの `master` ブランチを更新するとCodepipelineが走る
 
 
 ## 使用技術
