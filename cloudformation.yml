@@ -1,9 +1,14 @@
 Resources:
+  FmlBotArtifact:
+    Type: 'AWS::S3::Bucket'
+    Properties:
+      BucketName: fml-bot-artifact
+
   FmlLambdaFunction:
     Type: AWS::Lambda::Function
     Properties:
       Code:
-        S3Bucket: codepipeline-ap-northeast-1-870547711726
+        S3Bucket: !Ref FmlBotArtifact
         S3Key: fml-bot/built.zip
       Description: FML bot
       FunctionName: fml-bot
