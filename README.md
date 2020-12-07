@@ -5,6 +5,7 @@ https://www.fmylife.com/ の投稿をランダムにslackのチャンネルに�
 機械翻訳付き
 
 ## Architecture
+![architecture](architecture.drawio)
 
 ## How to deploy
 
